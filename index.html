@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>TyskApp</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="d-flex mb-4">
+        <img class="logo" src="./img/heartbeat128.svg" alt="logo" />
+        <div>
+          <div class="display-4 mb-2">мійТиск</div>
+          <div class="h4">журнал</div>
+        </div>
+      </div>
+      
+
+      <!-- List of records -->
+      <div class="card mb-4">
+        <ul id="recList" class="list-group list-group-flush">
+          
+        </ul>
+      </div>
+
+      <!-- Form -->
+      <div class="card bg-light">
+        <div class="card-header">Додати запис</div>
+        <div class="card-body">
+          <form id="form">
+            <div class="form-group d-flex">
+              <input
+                type="date"
+                class="form-control"
+                id="myDate"
+                name="record_date"
+              />
+              <input
+                type="number"
+                class="form-control"
+                id="tyskUp"
+                placeholder="Верхнє значення"
+                required
+              />
+              <input
+                type="number"
+                class="form-control"
+                id="tyskDown"
+                placeholder="Нижнє значення"
+                required
+              />
+              <input
+                type="number"
+                class="form-control"
+                id="tyskHb"
+                placeholder="Серцевий ритм"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg active"
+              id="submitBtn"
+            >
+              Ок
+            </button>
+            <button
+        class="btn btn-primary btn-lg active float-right "
+        onclick="Export2Word('recList', 'word-content.docx');"
+      >
+        експорт у Word
+      </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/export.js"></script>
+  </body>
+</html>
